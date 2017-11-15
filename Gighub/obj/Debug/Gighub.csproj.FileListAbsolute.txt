@@ -69,3 +69,5 @@ C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.Initia
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.csproj.GenerateResource.Cache
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.dll
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.pdb
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.CreateGigTable.resources
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.OverRideCOnventionsForGigsAndGenres.resources
