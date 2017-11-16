@@ -72,3 +72,4 @@ C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.pdb
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.CreateGigTable.resources
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.OverRideCOnventionsForGigsAndGenres.resources
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.PopulateGenresTable.resources
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.AddForeignKeyPropertiesToModel.resources
