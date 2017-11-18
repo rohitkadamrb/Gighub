@@ -8,7 +8,10 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -85,6 +88,8 @@ box-shadow:none;
 .navbar-brand{
     font-weight: 700; 
 }
+
+
 .btn{
 
     font-size: 17px;
