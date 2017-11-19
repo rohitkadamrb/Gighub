@@ -12,7 +12,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">@User.Identity.GetUserName() <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="@Url.Action("Attending","Gigs")">Gigs I am going</a></li>
-                <li><a href="#">Artist i am following</a></li>
+                <li><a href="@Url.Action("Index","Followees")">Artist i am following</a></li>
            
                 <li class="divider"></li>
                 <li> <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a> </li>
