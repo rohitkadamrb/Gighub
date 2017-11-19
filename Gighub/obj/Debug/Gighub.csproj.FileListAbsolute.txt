@@ -74,3 +74,10 @@ C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.OverRi
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.PopulateGenresTable.resources
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.AddForeignKeyPropertiesToModel.resources
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.AddNameToUser.resources
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.AddAttendances.resources
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\System.Net.Http.Formatting.dll
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\System.Web.Http.dll
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\System.Web.Http.WebHost.dll
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\System.Net.Http.Formatting.xml
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\System.Web.Http.xml
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\System.Web.Http.WebHost.xml
