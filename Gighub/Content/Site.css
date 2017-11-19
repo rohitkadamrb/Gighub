@@ -8,7 +8,7 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-span.field-validation-error {
+ .field-validation-error {
     color: red;
     font-weight: bold;
 }
@@ -24,6 +24,24 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+.voffset {
+    margin-top:2px; 
+}
+.voffset1 {
+    margin-top:5px; 
+}
+.voffset2 {
+    margin-top:10px; 
+}
+.voffset3 {
+    margin-top:20px; 
+}
+.voffset4 {
+    margin-top:40px; 
+}
+.voffset5 {
+    margin-top:80px; 
 }
 /*bootstrap override*/
 .navbar-inverse {
@@ -73,13 +91,11 @@ h6,
 .form-control:focus{
 
         border-color: #2196F3;
-        -webkit-box-shadow:none;
-            box-shadow:none;
+             box-shadow:none;
 }
 .dropdown-menu{
 box-shadow:none;
--webkit-box-shadow:none;
-
+ 
 }
 .navbar-inverse .navbar-nav > .dropdown > a .caret {
      border-top-color: #FFFF;  
@@ -116,8 +132,7 @@ box-shadow:none;
     text-align:center;
     width:60px;
     border-radius:8px;
-    -ms-border-radius:8px;
-
+ 
 }
 .gigs > li .date .month {
     text-transform:uppercase;
