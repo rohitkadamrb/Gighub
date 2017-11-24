@@ -83,3 +83,6 @@ C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\System.Web.Http.xml
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\System.Web.Http.WebHost.xml
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.AddFollowing.resources
 C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.AddisCancelledToGig.resources
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\obj\Debug\Gighub.Migrations.AddNotifcation.resources
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\AutoMapper.dll
+C:\Users\kadam\Desktop\Projects\Gighub\Gighub\bin\AutoMapper.xml
