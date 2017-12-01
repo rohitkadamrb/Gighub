@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    
     <meta name="description" content="The description of my page" />
 </head>
 <body>
@@ -39,7 +39,7 @@
     </div>
 
     @Scripts.Render("~/bundles/lib")
-   
+    @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)
     <script type="text/x-template" id="notifications-template">
         <ul class="notifications">

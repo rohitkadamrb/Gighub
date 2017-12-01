@@ -36,13 +36,19 @@ namespace Gighub.Controllers
                 .Where(a => a.AttendeeId == userid && a.Gig.DateTime > DateTime.Now)
                 .ToList()
                 .ToLookup(a => a.GigId);
+            //var following = _context.Followings
+            //        .Where(f => f.FollowerId == userid)
+            //        .ToList()
+            //        .ToLookup(f => f.FolloweeId);
+
             var viewModel = new GigsViewModel
             {
                 UpcomingGigs = upcomingGigs,
                 ShowActions = User.Identity.IsAuthenticated,
                 Heading = "Upcoming Gigs",
                 SearchTerm = query,
-                Attendances = attendances
+                Attendances = attendances,
+                //Followings = following
             };
             return View("Gigs", viewModel);
         }

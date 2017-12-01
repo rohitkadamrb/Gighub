@@ -45,12 +45,17 @@ namespace Gighub.Controllers
               .Where(a => a.AttendeeId == userId && a.Gig.DateTime > DateTime.Now)
               .ToList()
               .ToLookup(a => a.GigId);
+            //var following = _context.Followings
+            //       .Where(f => f.FollowerId == userId)
+            //       .ToList()
+            //       .ToLookup(f => f.FolloweeId);
             var viewModel = new GigsViewModel
             {
                 UpcomingGigs = gigs,
                 ShowActions = User.Identity.IsAuthenticated,
                 Heading = "Gigs I 'm Attending",
-                Attendances = attendances
+                Attendances = attendances,
+                //Followings = following
 
             };
             return View("Gigs", viewModel);
@@ -149,6 +154,7 @@ namespace Gighub.Controllers
             {
                 return HttpNotFound();
             }
+
 
             var viewModel = new GigDetailsViewModel
             {
