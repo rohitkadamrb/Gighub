@@ -1,7 +1,7 @@
-﻿using Gighub.Dtos;
-using Gighub.Models;
+﻿using Gighub.Core;
+using Gighub.Core.Dtos;
+using Gighub.Core.Models;
 using Microsoft.AspNet.Identity;
-using System.Linq;
 using System.Web.Http;
 
 namespace Gighub.Controllers.api
@@ -11,10 +11,11 @@ namespace Gighub.Controllers.api
     [Authorize]
     public class AttendancesController : ApiController
     {
-        private ApplicationDbContext _context;
-        public AttendancesController()
+
+        private IUnitOfWork _unitOfWork;
+        public AttendancesController(IUnitOfWork unitofWork)
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = unitofWork;
         }
 
 
@@ -24,7 +25,7 @@ namespace Gighub.Controllers.api
         {
             var userId = User.Identity.GetUserId();
 
-            if (_context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == dto.GigId))
+            if (_unitOfWork.Attendances.AnyAttendance(dto.GigId, userId))
             {
                 return BadRequest("The attendance already exists");
             }
@@ -34,9 +35,9 @@ namespace Gighub.Controllers.api
                 AttendeeId = userId
 
             };
+            _unitOfWork.Attendances.Add(attendance);
+            _unitOfWork.Complete();
 
-            _context.Attendances.Add(attendance);
-            _context.SaveChanges();
             return Ok();
         }
 
@@ -44,13 +45,13 @@ namespace Gighub.Controllers.api
         public IHttpActionResult DeleteAttendances(int id)
         {
             var userId = User.Identity.GetUserId();
-            var attendance = _context.Attendances.SingleOrDefault(a => a.AttendeeId == userId && a.GigId == id);
+            var attendance = _unitOfWork.Attendances.GetIfAnyAttendance(id, userId);
             if (attendance == null)
             {
                 return NotFound();
             }
-            _context.Attendances.Remove(attendance);
-            _context.SaveChanges();
+            _unitOfWork.Attendances.Cancel(attendance);
+            _unitOfWork.Complete();
             return Ok(id);
         }
     }

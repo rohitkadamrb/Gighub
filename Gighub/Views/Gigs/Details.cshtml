@@ -1,4 +1,4 @@
-﻿@model Gighub.ViewModels.GigDetailsViewModel
+﻿@model Gighub.Core.ViewModels.GigDetailsViewModel
 @{
     ViewBag.Title = "Details";
 }
@@ -7,9 +7,15 @@
     @Model.Gig.Artist.Name
     @if (User.Identity.IsAuthenticated)
     {
-         
-            <button class="btn @(Model.IsFollowing ? "btn-info" : "btn-default") btn-sm js-toggle-follow" data-user-id="@Model.Gig.ArtistId">@(Model.IsFollowing ? "Following" : "Follow") </button>
-            @*<button class="btn btn-info">Following</button>*@
+        if (Model.IsFollowing)
+        {
+            <button class="btn btn-info js-toggle-follow" data-user-id="@Model.Gig.ArtistId">Following</button>
+        }
+        else
+        {
+            <button class="btn btn-default js-toggle-follow" data-user-id="@Model.Gig.ArtistId">Follow</button>
+        }
+            
          
          
     }

@@ -8,7 +8,12 @@ var GigsController = function (attendanceService) {
         $(container).on("click", ".js-toggle-attendance", toggleAttendance);
       
     };
+    var fail = function () { alert("Something Failed !"); };
 
+    var done = function () {
+        var text = (button.text() ===  "Going") ? "Going?" : "Going";
+        button.toggleClass("btn-info").toggleClass("btn-default").text(text);
+    };
     var toggleAttendance = function (e) {
         button = $(e.target);
         var gigId = button.attr("data-gig-id");
@@ -19,12 +24,7 @@ var GigsController = function (attendanceService) {
 
     };
 
-    var fail = function () { alert("Something Failed !"); };
-
-    var done = function () {
-        var text = (button.text() === "Going") ? "Going?" : "Going";
-        button.toggleClass("btn-info").toggleClass("btn-default").text(text);
-    };
+  
 
     return {
         init: init

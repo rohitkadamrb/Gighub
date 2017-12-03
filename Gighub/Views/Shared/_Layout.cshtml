@@ -62,7 +62,7 @@
             }
             if(notification.originalDateTime!= notification.gig.dateTime){
             changes.push('date/time'),
-            originalValues.push(moment(notfication.originalDateTime).format("D MMM HH:mm"));
+            originalValues.push(moment(notification.originalDateTime).format("D MMM HH:mm"));
             newValues.push(moment(notification.gig.dateTime).format("D MMM HH:mm"));
             }
             %>

@@ -1,9 +1,7 @@
-﻿using Gighub.Models;
-using Gighub.Repositories;
-using Gighub.ViewModels;
+﻿using Gighub.Core;
+using Gighub.Core.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -11,18 +9,17 @@ namespace Gighub.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext _context;
-        private AttendanceRepository _attendanceRepository; public HomeController()
+
+
+        private IUnitOfWork _unitOfWork;
+        public HomeController(IUnitOfWork unitofwork)
         {
-            _context = new ApplicationDbContext();
-            _attendanceRepository = new AttendanceRepository(_context);
+            _unitOfWork = unitofwork;
+
         }
         public ActionResult Index(string query = null)
         {
-            var upcomingGigs = _context.Gigs
-                .Include(g => g.Artist)
-                .Include(g => g.Genre)
-                .Where(g => g.DateTime > DateTime.Now && !g.IsCancelled);
+            var upcomingGigs = _unitOfWork.Gigs.GetAllUpcomingGigs(); ;
 
             if (!String.IsNullOrWhiteSpace(query))
             {
@@ -32,7 +29,7 @@ namespace Gighub.Controllers
                    g.Venue.Contains(query));
             }
             string userid = User.Identity.GetUserId();
-            var attendances = _attendanceRepository.GetFutureAttendances(userid)
+            var attendances = _unitOfWork.Attendances.GetFutureAttendances(userid)
                 .ToLookup(a => a.GigId);
             //var following = _context.Followings
             //        .Where(f => f.FollowerId == userid)
