@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace Gighub.Core.Models
 {
@@ -12,7 +11,7 @@ namespace Gighub.Core.Models
 
         public string OrginalVenue { get; private set; }
 
-        [Required]
+
         public Gig Gig { get; private set; }
 
         public Notification()
