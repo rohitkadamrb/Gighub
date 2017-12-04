@@ -18,10 +18,15 @@ namespace Gighub.Controllers.api
         public IHttpActionResult Cancel(int id)
         {
             var userId = User.Identity.GetUserId();
-            var gig = _unitOfWork.Gigs.GetGigWithUserId(id, userId);
-            if (gig.IsCancelled)
+            var gig = _unitOfWork.Gigs.GetGigWithUserId(id);
+            if (gig == null || gig.IsCancelled)
             {
                 return NotFound();
+            }
+            if (gig.ArtistId != userId)
+            {
+                return Unauthorized();
+
             }
             gig.Cancel();
 

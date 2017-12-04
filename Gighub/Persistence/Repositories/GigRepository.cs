@@ -41,11 +41,11 @@ namespace Gighub.Persistence.Repositories
                     .Include(g => g.Attendances.Select(a => a.Attendee))
                   .SingleOrDefault(g => g.Id == gigId);
         }
-        public Gig GetGigWithUserId(int id, string userId)
+        public Gig GetGigWithUserId(int id)
         {
             return _context.Gigs
                 .Include(g => g.Attendances.Select(a => a.Attendee))
-                .Single(g => g.Id == id && g.ArtistId == userId);
+                .Single(g => g.Id == id);
         }
 
         public IEnumerable<Gig> GetGigOfCurrentUser(string userId)

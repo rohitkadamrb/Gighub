@@ -12,7 +12,7 @@ namespace Gighub.Core.Repositories
         Gig GetGigWithArtistAndGenre(int Id);
         Gig GetGigWithAttendees(int gigId);
 
-        Gig GetGigWithUserId(int id, string userId);
+        Gig GetGigWithUserId(int id);
 
         void Cancel(Gig gig);
     }
